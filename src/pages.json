@@ -5,18 +5,6 @@
             "style": {
                 "navigationBarTitleText": "首页"
             }
-        },
-        {
-            "path": "pages/login/set-token",
-            "style": {
-                "navigationBarTitleText": "设置token"
-            }
-        },
-        {
-            "path": "pages/login/clear",
-            "style": {
-                "navigationBarTitleText": "清除Storage"
-            }
         }
     ],
     "globalStyle": {

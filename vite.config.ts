@@ -20,16 +20,7 @@ export default ({ mode }: any) => {
             }
         },
         server: {
-            port: 8000,
-            host: '0.0.0.0',
-            proxy: {
-                '/api': {
-                    target: env.VITE_APP_BASEURL, //要请求的域名
-                    secure: false, // 如果是https接口，需要配置这个参数
-                    changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
-                    rewrite: path => path.replace(/^\/api/, '')
-                }
-            }
+         
         },
         build: {
             sourcemap: false, // 输出.map文件,默认是false

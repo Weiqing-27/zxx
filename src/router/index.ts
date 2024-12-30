@@ -24,10 +24,10 @@ router.beforeEach((to: any, from) => {
         success(true);
         return;
         //路由白名单拦截
-        if (to.path == '/pages/login/set-token' || to.path == '/pages/login/clear') {
-            success(true);
-            return;
-        }
+        // if (to.path == '/pages/login/set-token' || to.path == '/pages/login/clear') {
+        //     success(true);
+        //     return;
+        // }
         //****自动登录相关操作****//
         const { code, token } = routerQuery;
         //传参方式设置token
