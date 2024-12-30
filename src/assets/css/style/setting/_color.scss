@@ -1,0 +1,73 @@
+$color: (
+    // 主色
+    primary: $primary,
+    primary-light: $primary-light,
+    primary-to-ligth: $primary-to-light,
+    // 辅助色
+    success: $success,
+    warning: $warning,
+    warning-light: $warning-light,
+    danger: $danger,
+    // 黑色
+    black: $black,
+    // 白色
+    white: $white
+) !default;
+
+@each $key, $child in $color {
+    .#{'' + $key} {
+        color: $child;
+    }
+
+    .bg-#{'' + $key} {
+        background: $child;
+    }
+}
+
+.gray {
+    color: #666;
+}
+
+.gray5 {
+    color: #555555;
+}
+
+.gray6 {
+    color: #666666;
+}
+
+.gray7 {
+    color: #777777;
+}
+
+.gray8 {
+    color: #888888;
+}
+
+.gray9 {
+    color: #999999;
+}
+
+.gray-a {
+    color: #acacac;
+}
+
+.gray-c {
+    color: #cccccc;
+}
+
+.gray-e {
+    color: #eeeeee;
+}
+
+.black {
+    color: #000000;
+}
+
+.black2 {
+    color: #232323;
+}
+
+.black3 {
+    color: #333333;
+}

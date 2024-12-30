@@ -1,154 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Expires" content="0" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Cache-control" content="no-cache" />
+        <meta http-equiv="Cache" content="no-cache" />
+        <!-- 页面加载动画样式 -->
+        <style>
+            body {
+                margin: 0;
+            }
+            .uni-async-loading {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 50px;
+                text-align: center;
+            }
+            .uni-loading {
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                vertical-align: middle;
+                animation: uni-loading 1s steps(12, end) infinite;
+                background-size: 100%;
+                background-color: transparent;
+                background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=');
+                background-repeat: no-repeat;
+            }
+            @keyframes uni-loading {
+                0% {
+                    transform: rotate3d(0, 0, 1, 0deg);
+                }
+                100% {
+                    transform: rotate3d(0, 0, 1, 360deg);
+                }
+            }
+        </style>
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'));
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                    (coverSupport ? ', viewport-fit=cover' : '') +
+                    '" />'
+            );
+        </script>
+        <title></title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 引入css文件 -->
-    <link rel="stylesheet" href="./css/login.css">
-    <!-- 引入jquery -->
-    <script src="js/jquery-latest.js"></script>
-    <title>关于我们</title>
-</head>
-
-<body>
-    <!-- 最外层的大盒子 -->
-    <div class="box">
-        <!-- 滑动盒子 -->
-        <div class="pre-box">
-            <h1>WELCOME</h1>
-            <p>master</p>
-            <div class="img-box">
-                <img src="./img/waoku.jpg" alt="">
-            </div>
+    <body>
+        <div id="app">
+            <div class="uni-async-loading"><i class="uni-loading"></i></div>
         </div>
-        <!-- 昕昕 -->
-        <div class="register-form">
-            <!-- 标题盒子 -->
-            <div class="title-box">
-                <h1>恭迎女王陛下</h1>
-            </div>
-            <!-- 输入框盒子 -->
-            
-            <!-- 按钮盒子 -->
-            <div class="btn-box">
-             
-                <!-- 绑定点击事件 -->
-                <p onclick="mySwitch()">老奴斗胆请陛下看看这里</p>
-				
-            </div>
-        </div>
-        <!-- 登录盒子 -->
-        <div class="login-form">
-            <!-- 标题盒子 -->
-            <div class="title-box">
-                <h1>登录</h1>
-            </div>
-            <!-- 输入框盒子 -->
-            <div class="input-box">
-                <input type="text" id="username" placeholder="用户名" >
-                <input type="password" id="password" placeholder="密码" onkeydown="handleEnter(event)">
-            </div>
-            <!-- 按钮盒子 -->
-            <div class="btn-box">
-                <button onclick="login()">登录</button>
-                <!-- 绑定点击事件 -->
-                <p onclick="mySwitch()">我是昕昕</p>
-            </div>
-        </div>
-    </div>
-    <script>
-        // 滑动的状态
-        let flag = true
-        const mySwitch = () => {
-            if (flag) {
-                // 获取到滑动盒子的dom元素并修改它移动的位置
-                $(".pre-box").css("transform", "translateX(100%)")
-                // 获取到滑动盒子的dom元素并修改它的背景颜色
-                $(".pre-box").css("background-color", "#c9e0ed")
-                //修改图片的路径
-                $("img").attr("src", "./img/wuwu.jpeg")
-            } else {
-                $(".pre-box").css("transform", "translateX(0%)")
-                $(".pre-box").css("background-color", "#edd4dc")
-                $("img").attr("src", "./img/waoku.jpg")
-            }
-            flag = !flag
-        }
-
-        const login = () => {
-            const username = $("#username").val();
-            const password = $("#password").val();
-
-            // 静态写死的登录账号
-            const staticUsername = "123";
-            const staticPassword = "123";
-
-            if (username === staticUsername && password === staticPassword) {
-                // 登录成功后跳转到新页面
-                window.location.href = "ourdaily.html";
-            } else {
-                alert("用户名或密码错误");
-            }
-        }
-
-        const queenLogin = () => {
-            // 静态写死的登录账号
-            const staticUsername = "zhaoxx";
-            const staticPassword = "woaini";
-
-            // 弹出问题弹窗
-            const answer1 = prompt("问题1：你是昕昕？");
-            const answer2 = prompt("问题2：陛下还记得老奴的名字嘛？");
-            const answer3 = prompt("问题3：陛下还记得我们的第一次见面的时候嘛？");
-
-            if (answer1 === "是" && answer2 === "魏庆" && answer3 === "2024年2月29日") {
-                // 答案正确，自动填写用户名和密码并登录
-                window.location.href = "loverdonghua.html";
-            } else {
-                alert("big胆，竟敢冒充女王陛下");
-            }
-        }
-
-        $(document).ready(function () {
-            // 绑定恭迎女王陛下点击事件
-            $(".register-form .btn-box p").click(function () {
-                queenLogin();
-            });
-        });
-
-        const handleEnter = (event) => {
-            if (event.key === 'Enter') {
-                login();
-            }
-        }
-    </script>
-    <script>
-        const bubleCreate = () => {
-            // 获取body元素
-            const body = document.body
-            // 创建泡泡元素
-            const buble = document.createElement('span')
-            // 设置泡泡半径
-            let r = Math.random() * 5 + 25 //半径大小为25~30
-            // 设置泡泡的宽高
-            buble.style.width = r + 'px'
-            buble.style.height = r + 'px'
-            // 设置泡泡的随机起点
-            buble.style.left = Math.random() * innerWidth + 'px'
-            // 为body添加buble元素
-            body.append(buble)
-            // 4s清除一次泡泡
-            setTimeout(() => {
-                buble.remove()
-            }, 4000)
-        }
-        // 每200ms生成一个泡泡
-        setInterval(() => {
-            bubleCreate()
-        }, 200);
-    </script>
-</body>
-
+        <script type="module" src="/src/main.ts"></script>
+    </body>
 </html>

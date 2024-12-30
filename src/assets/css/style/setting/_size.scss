@@ -1,0 +1,36 @@
+@for $i from 1 through 100 {
+    .w-#{$i} {
+        width: #{$size-root * $i};
+    }
+
+    .h-#{$i} {
+        height: #{$size-root * $i};
+    }
+}
+
+.h-full {
+    height: 100vh;
+}
+.h-min-full {
+    min-height: 100vh;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-full {
+    width: 100vw;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.h-auto {
+    height: auto;
+}

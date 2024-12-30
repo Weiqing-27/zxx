@@ -1,0 +1,45 @@
+@for $i from 1 through 30 {
+    .text-#{$i} {
+        font-size: $text-size-root * $i;
+    }
+
+    .text-#{$i} {
+        font-size: $text-size-root * $i;
+    }
+}
+
+
+.text-Abc {
+    text-transform: Capitalize;
+}
+
+.text-ABC {
+    text-transform: Uppercase;
+}
+
+.text-abc {
+    text-transform: Lowercase;
+}
+
+.text-price::before {
+    content: "¥";
+    font-size: 80%;
+    margin-right: 4rpx;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+

@@ -1,0 +1,29 @@
+{
+    "pages": [
+        {
+            "path": "pages/index/index",
+            "style": {
+                "navigationBarTitleText": "首页"
+            }
+        },
+        {
+            "path": "pages/login/set-token",
+            "style": {
+                "navigationBarTitleText": "设置token"
+            }
+        },
+        {
+            "path": "pages/login/clear",
+            "style": {
+                "navigationBarTitleText": "清除Storage"
+            }
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "智能助手",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8",
+        "navigationStyle": "custom"
+    }
+}
